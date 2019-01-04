@@ -1,0 +1,200 @@
+input:focus{
+    outline: none;
+  }
+  .instructions{
+    font-size: 18px;
+    color: #23262d;
+    font-family: Arial, Tahoma;
+    margin-top: 50px;
+    text-align: center;
+  }
+  
+  .table-editable{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    border-collapse: collapse;
+    background: white;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #C1C3D1;
+    position: relative;
+  }
+  
+  .table-editable thead{
+    background: #eee;
+  }
+  
+  .table-editable thead th{
+    padding: 20px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background: #23262d;
+    color: #eee;
+    font-size: 16px;
+    font-family: Arial, Tahoma;
+    text-align: left;
+    border-bottom: 4px solid #C1C3D1;
+    border-right: 1px solid #343a45;
+  }
+  .table-editable thead th:last-child{
+    border-right: none;
+  }
+  
+  .table-editable tbody tr td{
+    position: relative;
+    padding: 20px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    background: white;
+    color: #414141;
+    font-size: 16px;
+    font-family: Arial, Tahoma;
+    font-weight: 100;
+    border: 1px solid #C1C3D1;
+  }
+  
+  .table-editable thead th:last-child{
+    padding: 20px 15px;
+  }
+  .table-editable tbody tr td:last-child{
+    padding: 20px 15px;
+  }
+  
+  /** STATE DOT AND STATE SELECTION AREA **/
+  .state-dot{
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    margin: auto;
+  }
+  
+  .open{
+    width: 9px;
+    height: 9px;
+    background: transparent;
+    border: 3px solid green;
+  }
+  .hold{ background: orange; }
+  .complete{ background: green; }
+  .cancelled{ background: red; }
+  
+  .new-row{
+    display: none;
+    opacity: 0.3;
+    filter:alpha(opacity=30);
+  }
+  .edit{
+    position: absolute;
+    background: #fff;
+    width: 105%;
+    padding: 3px;
+    border-radius: .3em;
+    z-index: 100;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .edit_state{
+    height: auto;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounceInCenterX 0.2s;
+  }
+  .state_option{
+    width: 100%;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 0.3em;
+  }
+  .state_option:hover{
+    background: #eee;
+  }
+  .edit_txt{
+    height: 105%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: bounceInCenter 0.2s;
+  }
+  
+  @keyframes bounceInCenter {
+    0% { transform: translate(-50%, -50%) scale(0);}
+    60% { transform: translate(-50%, -50%) scale(1); }
+    85% { transform: translate(-50%, -50%) scale(0.9); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }
+  @keyframes bounceInCenterX {
+    0% { transform: translateX(-50%) scale(0);}
+    60% { transform: translateX(-50%) scale(1); }
+    85% { transform: translateX(-50%) scale(0.9); }
+    100% { transform: translateX(-50%) scale(1); }
+  }
+  .edit input{
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    border: none;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  
+  .edit .bubble{
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    right: -80px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    padding: 2px;
+    cursor: pointer;
+    animation: bounceIn 2s linear;
+  }
+  .edit .bubble:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 20px 15px 0;
+    border-color: transparent #eee transparent transparent;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .edit .close, .edit .chng{
+    position: relative;
+    width: 50px;
+    height: 45%;
+    border-radius: 3px;
+    color: white;
+    transition: 200ms;
+  }
+  
+  .edit .close{
+    background: red;
+  }
+  
+  .edit .close:active{
+    background: #fc7474;
+  }
+  
+  .edit .chng{
+    background: green;
+    margin-top: 1px;
+    margin-bottom: 4px;
+  }
+  .edit .chng:active{
+    background: #22b522;
+  }
+  
+  .edit div i{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }

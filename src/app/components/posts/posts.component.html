@@ -1,0 +1,28 @@
+
+<!-- <ul>
+  <li>
+    <h2><a routerLink="/posts">View Posts</a></h2>
+  </li>
+  <li>
+    <h2><a routerLink="/users">View Users</a></h2>
+  </li>
+  
+</ul> -->
+<app-breadcrumb></app-breadcrumb>
+<div class=wrapper>
+  <table class="table-editable">
+    <thead>
+      <th>Id</th>
+      <th>Title</th>
+      <th>Body</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of posts">
+        <td >{{post.id}}</td>
+        <td >{{post.title}}</td>
+        <td>{{post.body}}</td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
